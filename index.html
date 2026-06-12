@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Agrinho 2026 | Agro Forte, Futuro Sustentável</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ========== RESET & GLOBAL ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F9FBF7;
+            color: #1E2F1C;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+        }
+
+        /* cores temáticas */
+        :root {
+            --verde-agro: #2C6E2F;
+            --verde-claro: #4CAF50;
+            --verde-pastel: #D9E6C3;
+            --marrom-solo: #8B5A2B;
+            --azul-agua: #2A9D8F;
+            --creme: #FDF8EC;
+            --cinza-fundo: #F4F7F2;
+            --sombra: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--verde-agro);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--verde-agro);
+            color: var(--verde-agro);
+        }
+
+        .btn-outline:hover {
+            background: var(--verde-agro);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn:hover {
+            background-color: #1C531F;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px -12px rgba(44,110,47,0.4);
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(2px);
+            background: rgba(255, 255, 255, 0.96);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--verde-agro), #3E9F44);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .logo span {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--marrom-solo);
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #2E3B2C;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--verde-agro);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(120deg, #EFF7E6 0%, #FFFFFF 80%);
+            padding: 80px 0 70px;
+        }
+
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-badge {
+            background-color: var(--verde-pastel);
+            color: var(--verde-agro);
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #1C3B1A;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #3A5236;
+            margin-bottom: 32px;
+            max-width: 550px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 30px;
+        }
+
+        .stat {
+            font-weight: 700;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            color: var(--verde-agro);
+        }
+
+        .hero-img {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-img i {
+            font-size: 14rem;
+            color: var(--verde-agro);
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+        }
+
+        /* Seção Equilíbrio (cards) */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.3rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1E3A1C;
+        }
+
+        .section-sub {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 48px;
+            color: #4A6646;
+            font-size: 1.1rem;
+        }
+
+        .cards-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 32px;
+            padding: 30px 25px;
+            flex: 1;
+            min-width: 260px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: var(--sombra);
+            border: 1px solid rgba(76, 175, 80, 0.15);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--verde-claro);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: var(--verde-agro);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+        }
+
+        /* banner agro forte */
+        .banner-sustentavel {
+            background: linear-gradient(110deg, var(--verde-agro), #307B34);
+            color: white;
+            border-radius: 48px;
+            padding: 50px 40px;
+            margin: 40px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .banner-text h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        /* Práticas sustentáveis */
+        .praticas-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .pratica-item {
+            background: var(--creme);
+            border-radius: 28px;
+            padding: 28px;
+            border-left: 6px solid var(--azul-agua);
+            transition: 0.2s;
+        }
+
+        .pratica-item i {
+            font-size: 2.2rem;
+            color: var(--azul-agua);
+            margin-bottom: 16px;
+        }
+
+        /* timeline / futuro */
+        .timeline-futuro {
+            background: var(--cinza-fundo);
+            border-radius: 48px;
+            padding: 50px 40px;
+        }
+
+        /* footer */
+        footer {
+            background-color: #1E2F1C;
+            color: #D9E0D3;
+            padding: 50px 0 30px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .footer-logo h3 {
+            font-size: 1.7rem;
+            color: white;
+        }
+
+        .social i {
+            font-size: 1.6rem;
+            margin-right: 18px;
+            color: #BDD9B0;
+            transition: 0.2s;
+        }
+
+        .social i:hover {
+            color: white;
+        }
+
+        /* responsivo */
+        @media (max-width: 850px) {
+            .navbar {
+                flex-direction: column;
+                gap: 18px;
+            }
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            .hero-img i {
+                font-size: 9rem;
+            }
+            .container {
+                padding: 0 24px;
+            }
+        }
+
+        /* Form newsletter */
+        .news-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .news-form input {
+            flex: 1;
+            padding: 12px 18px;
+            border-radius: 60px;
+            border: none;
+            font-family: inherit;
+            outline: none;
+        }
+        button {
+            font-family: inherit;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1>🌱 Agrinho 2026</h1>
+                    <span>Agro forte · Futuro sustentável</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#equilibrio">Equilíbrio</a></li>
+                    <li><a href="#praticas">Práticas</a></li>
+                    <li><a href="#futuro">Futuro</a></li>
+                    <li><a href="#contato" class="btn-outline" style="padding: 8px 20px;">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero section -->
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge"><i class="fas fa-seedling"></i>  Agrinho 2026 | Tema oficial</div>
+                    <h1>Agro forte, <br> futuro sustentável</h1>
+                    <p>Produzir mais e melhor, em harmonia com a terra, a água e as próximas gerações. O equilíbrio entre produção agrícola e meio ambiente é o caminho para um planeta vivo.</p>
+                    <a href="#praticas" class="btn"><i class="fas fa-leaf"></i> Explorar soluções</a>
+                    <div class="hero-stats">
+                        <div class="stat"><span class="stat-number">+40%</span><br> eficiência hídrica</div>
+                        <div class="stat"><span class="stat-number">-32%</span><br> emissões com ILPF</div>
+                        <div class="stat"><span class="stat-number">15M</span><br> hectares em recuperação</div>
+                    </div>
+                </div>
+                <div class="hero-img">
+                    <i class="fas fa-tractor"></i>
+                    <i class="fas fa-tree" style="font-size: 7rem; margin-left: -30px; color: #3E8E41;"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção equilíbrio produção x meio ambiente -->
+        <section id="equilibrio" class="section">
+            <div class="container">
+                <div class="section-title">🌾 Produção & Prospecção 🌿</div>
+                <div class="section-sub">O desafio do nosso tempo é aliar alta produtividade com conservação ambiental. A inovação rural mostra que é possível crescer e proteger os biomas.</div>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-charging-station"></i></div>
+                        <h3>Energia Limpa no Campo</h3>
+                        <p>Biodigestores, energia solar e biometano reduzem pegada de carbono e geram economia circular.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-water"></i></div>
+                        <h3>Água como bem comum</h3>
+                        <p>Captação de chuva, irrigação de precisão e recuperação de nascentes garantem produção resiliente.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h3>Solo vivo e fértil</h3>
+                        <p>Plantio direto, bioinsumos e rotação de culturas mantêm o carbono no solo e aumentam a produtividade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner CTA -->
+        <div class="container">
+            <div class="banner-sustentavel">
+                <div class="banner-text">
+                    <h2><i class="fas fa-recycle"></i> Carbono neutro? Sim, é possível!</h2>
+                    <p>O agro brasileiro lidera tecnologias de baixo carbono. Com técnicas regenerativas já reduzimos emissões e restauramos ecossistemas.</p>
+                </div>
+                <a href="#praticas" class="btn btn-outline" style="background: white; color: #2C6E2F; border: none;">Conheça o plano ABC+</a>
+            </div>
+        </div>
+
+        <!-- Práticas Sustentáveis (interativas) -->
+        <section id="praticas" class="section">
+            <div class="container">
+                <div class="section-title">📌 Práticas que harmonizam</div>
+                <div class="section-sub">Da agricultura regenerativa à integração lavoura-pecuária-floresta (ILPF), o futuro já está em ação.</div>
+                <div class="praticas-list">
+                    <div class="pratica-item">
+                        <i class="fas fa-tree"></i>
+                        <h3>ILPF (Integração Lavoura-Pecuária-Floresta)</h3>
+                        <p>Recupera áreas degradadas, aumenta biodiversidade e renda por hectare. Exemplo real de aliança verde.</p>
+                    </div>
+                    <div class="pratica-item">
+                        <i class="fas fa-bug"></i>
+                        <h3>Controle biológico</h3>
+                        <p>Substitui defensivos químicos por inimigos naturais, protegendo polinizadores e a saúde do solo.</p>
+                    </div>
+                    <div class="pratica-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Agricultura de Precisão</h3>
+                        <p>Uso de drones, sensores e IA para aplicar insumos no local certo, na quantidade certa. Menos desperdício, mais colheita.</p>
+                    </div>
+                    <div class="pratica-item">
+                        <i class="fas fa-seedling"></i>
+                        <h3>Corredores ecológicos</h3>
+                        <p>Restauração de mata nativa entre lavouras conecta fauna, protege nascentes e regula o clima local.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Futuro sustentável / meta 2030 -->
+        <section id="futuro" class="section">
+            <div class="container timeline-futuro">
+                <div style="text-align: center;">
+                    <i class="fas fa-calendar-alt" style="font-size: 2.5rem; color: var(--verde-agro);"></i>
+                    <h2 class="section-title" style="margin-top: 8px;">Agenda 2030: Caminhos para o agro sustentável</h2>
+                    <p class="section-sub">Metas concretas que mostram a força do equilíbrio entre produção e meio ambiente.</p>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: space-between; margin-top: 30px;">
+                    <div style="flex:1; background: white; border-radius: 32px; padding: 24px;">
+                        <h3><i class="fas fa-check-circle" style="color: #4CAF50;"></i> 2026</h3>
+                        <p>Expansão de 50% da área com manejo integrado de pragas e certificação de fazendas carbono neutro.</p>
+                    </div>
+                    <div style="flex:1; background: white; border-radius: 32px; padding: 24px;">
+                        <h3><i class="fas fa-charging-station"></i> 2028</h3>
+                        <p>40% da frota agrícola com fontes renováveis e recuperação de 5 milhões de hectares de pastagens degradadas.</p>
+                    </div>
+                    <div style="flex:1; background: white; border-radius: 32px; padding: 24px;">
+                        <h3><i class="fas fa-globe-americas"></i> 2030</h3>
+                        <p>Neutralidade de carbono no setor agropecuário, com conservação de biomas e inovação socioambiental.</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#" class="btn" id="simularBtn"><i class="fas fa-chart-simple"></i> Simular impacto sustentável</a>
+                    <p id="msgImpacto" style="margin-top: 20px; font-weight: 500; color: var(--verde-agro);"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Depoimento / envolvimento comunidade agrinho -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">💬 Juventude e Agro Sustentável</div>
+                <div class="section-sub">Alunos e professores Agrinho 2026 compartilham visão de futuro: produção consciente e natureza próspera.</div>
+                <div style="background: #E9F3E3; border-radius: 48px; padding: 40px; text-align: center;">
+                    <i class="fas fa-quote-left" style="font-size: 3rem; color: var(--verde-claro); opacity: 0.6;"></i>
+                    <p style="font-size: 1.3rem; max-width: 800px; margin: 20px auto; font-style: italic;">"Aprendi que cuidar do solo é como cuidar da minha própria casa. Com plantio direto e compostagem, minha família aumentou a produção de hortaliças e a terra ficou mais viva"</p>
+                    <p><strong>— Ana Clara, aluna Rede Agrinho —</strong></p>
+                    <div style="margin-top: 30px;">
+                        <i class="fas fa-star" style="color: #F4B942;"></i><i class="fas fa-star" style="color: #F4B942;"></i><i class="fas fa-star" style="color: #F4B942;"></i><i class="fas fa-star" style="color: #F4B942;"></i><i class="fas fa-star" style="color: #F4B942;"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato / Newsletter -->
+        <section id="contato" class="section">
+            <div class="container">
+                <div class="section-title">🌱 Receba novidades do Agrinho 2026</div>
+                <div class="section-sub">Inscreva-se para conteúdos exclusivos, dicas de sustentabilidade e eventos sobre agroecologia.</div>
+                <div style="max-width: 600px; margin: 0 auto; background: white; border-radius: 48px; padding: 30px 40px; box-shadow: var(--sombra);">
+                    <form id="newsletterForm">
+                        <input type="text" id="nomeUser" placeholder="Seu nome completo" required style="width:100%; padding:14px 18px; border-radius: 60px; border:1px solid #ccc; margin-bottom: 18px;">
+                        <input type="email" id="emailUser" placeholder="Seu melhor e-mail" required style="width:100%; padding:14px 18px; border-radius: 60px; border:1px solid #ccc; margin-bottom: 18px;">
+                        <button type="submit" class="btn" style="width:100%; justify-content: center;"><i class="fas fa-paper-plane"></i> Quero fazer parte</button>
+                        <p id="formMessage" style="margin-top: 16px; text-align: center; font-size: 0.9rem;"></p>
+                    </form>
+                    <p style="margin-top: 20px; text-align: center; font-size: 0.8rem;">Prometemos não enviar spam 🌿</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>🌾 Agrinho 2026</h3>
+                    <p>Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente.</p>
+                    <p style="margin-top: 10px;"><i class="fas fa-map-marker-alt"></i> Brasil — do campo para o mundo</p>
+                </div>
+                <div class="social">
+                    <p><strong>Siga nossas redes</strong></p>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-twitter"></i>
+                    <p style="margin-top: 20px;">© 2026 Programa Agrinho | Todos os direitos reservados</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Funções interativas: Simular impacto + Newsletter validação
+
+        const simularBtn = document.getElementById('simularBtn');
+        const msgImpacto = document.getElementById('msgImpacto');
+
+        if(simularBtn) {
+            simularBtn.addEventListener('click', function(e){
+                e.preventDefault();
+                let hectares = Math.floor(Math.random() * (500 - 30 + 1) + 30);
+                let arvores = hectares * 85;
+                let carbono = (hectares * 3.7).toFixed(1);
+                msgImpacto.innerHTML = `🌍 Projeção: ${hectares} hectares manejados com técnicas sustentáveis → +${arvores} árvores nativas preservadas/restauradas, redução de ${carbono} toneladas de CO₂ equivalente. Agro forte e futuro verde! 🌱`;
+                msgImpacto.style.opacity = '0';
+                setTimeout(() => { msgImpacto.style.opacity = '1'; }, 50);
+            });
+        }
+
+        // formulário newsletter
+        const formNews = document.getElementById('newsletterForm');
+        const formMessage = document.getElementById('formMessage');
+        
+        formNews.addEventListener('submit', function(event){
+            event.preventDefault();
+            const nome = document.getElementById('nomeUser').value.trim();
+            const email = document.getElementById('emailUser').value.trim();
+            
+            if(nome === "" || email === ""){
+                formMessage.style.color = "#c0392b";
+                formMessage.innerHTML = "❌ Por favor, preencha nome e e-mail para receber conteúdos incríveis!";
+                return;
+            }
+            if(!email.includes('@') || !email.includes('.')){
+                formMessage.style.color = "#c0392b";
+                formMessage.innerHTML = "📧 E-mail inválido. Digite um endereço válido.";
+                return;
+            }
+            // simula envio com sucesso
+            formMessage.style.color = "#2C6E2F";
+            formMessage.innerHTML = `✅ Obrigado(a), ${nome}! Você receberá novidades do Agrinho 2026 sobre agro sustentável. 🌎🚜`;
+            document.getElementById('nomeUser').value = '';
+            document.getElementById('emailUser').value = '';
+            
+            // Limpa mensagem após alguns segundos
+            setTimeout(() => {
+                if(formMessage.innerHTML.includes('Obrigado')) {
+                    formMessage.innerHTML = '';
+                }
+            }, 4000);
+        });
+
+        // Smooth scroll para links internos (navegação suave)
+        document.querySelectorAll('.nav-links a, .btn[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e){
+                const hash = this.getAttribute('href');
+                if(hash && hash.startsWith("#") && hash !== "#"){
+                    const targetId = hash.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if(targetElement){
+                        e.preventDefault();
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // atualiza url
+                        history.pushState(null, null, hash);
+                    }
+                }
+            });
+        });
+        
+        // Pequena interação nos cards: console efeito gentil, reforço educacional
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('h3')?.innerText || "prática sustentável";
+                console.log(`🌿 Card clicado: ${title} – equilíbrio entre produção e meio ambiente.`);
+            });
+        });
+
+        // animação de boas vindas
+        console.log("🌱 Site Agrinho 2026 - Agro forte, futuro sustentável: equilíbrio que produz e conserva!");
+    </script>
+</body>
+</html>
